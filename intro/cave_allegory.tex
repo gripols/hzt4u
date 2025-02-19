@@ -1,0 +1,172 @@
+\documentclass[12pt]{exam}
+\newcommand{\myname}{G. Polstvin}
+\newcommand{\myhwtype}{Plato's Allegory of the Cave}
+\newcommand{\myhwnum}{0}
+\newcommand{\myclass}{HZT4U}
+\newcommand{\mylecture}{0}
+\newcommand{\mysection}{Z}
+
+% Prefix for numedquestion's
+\newcommand{\questiontype}{Question}
+
+% Use this if your "written" questions are all under one section
+% For example, if the homework handout has Section 5: Written Questions
+% and all questions are 5.1, 5.2, 5.3, etc. set this to 5
+% Use for 0 no prefix. Redefine as needed per-question.
+\newcommand{\writtensection}{0}
+
+\usepackage{amsmath, amsfonts, amsthm, amssymb}  % Some math symbols
+\usepackage{enumerate}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[all]{xy}
+\usepackage{wrapfig}
+\usepackage{fancyvrb}
+\usepackage[T1]{fontenc}
+\usepackage{listings}
+
+\usepackage{centernot}
+\usepackage{mathtools}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+\DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
+\DeclarePairedDelimiter{\card}{\vert}{\vert}
+
+% Uncomment the following line to get Solarized-themed source listings
+% You will have had to already installed the solarized-light package
+% https://github.com/jez/latex-solarized
+%
+%\usepackage{solarized-light}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt plus 1pt}
+\pagestyle{empty}
+
+\def\indented#1{\list{}{}\item[]}
+\let\indented=\endlist
+
+\newcounter{questionCounter}
+\newcounter{partCounter}[questionCounter]
+
+\newenvironment{namedquestion}[1][\arabic{questionCounter}]{%
+    \addtocounter{questionCounter}{1}%
+    \setcounter{partCounter}{0}%
+    \vspace{.2in}%
+        \noindent{\bf #1}%
+    \vspace{0.3em} \hrule \vspace{.1in}%
+}{}
+
+\newenvironment{numedquestion}[0]{%
+	\stepcounter{questionCounter}%
+    \vspace{.2in}%
+        \ifx\writtensection\undefined
+        \noindent{\bf \questiontype \; \arabic{questionCounter}. }%
+        \else
+          \if\writtensection0
+          \noindent{\bf \questiontype \; \arabic{questionCounter}. }%
+          \else
+          \noindent{\bf \questiontype \; \writtensection.\arabic{questionCounter} }%
+        \fi
+    \vspace{0.3em} \hrule \vspace{.1in}%
+}{}
+
+\newenvironment{alphaparts}[0]{%
+  \begin{enumerate}[label=\textbf{(\alph*)}]
+}{\end{enumerate}}
+
+\newenvironment{arabicparts}[0]{%
+  \begin{enumerate}[label=\textbf{\arabic{questionCounter}.\arabic*})]
+}{\end{enumerate}}
+
+\newenvironment{questionpart}[0]{%
+  \item
+}{}
+
+\newcommand{\answerbox}[1]{
+\begin{framed}
+\vspace{#1}
+\end{framed}}
+
+\pagestyle{head}
+
+\headrule
+\header{\textbf{\myclass\ \mylecture\mysection}}%
+{\textbf{\myname\ }}%
+{\textbf{\myhwtype\ \myhwnum}}
+
+\begin{document}
+\thispagestyle{plain}
+\begin{center}
+  {\Large \myclass{} \myhwtype{} \myhwnum} \\
+  \myname{} \\
+  \today
+\end{center}
+
+\begin{numedquestion}
+    What do you think Plato was trying to explain in the Cave?
+\end{numedquestion}
+
+It is an allegory for knowledge and enlightenment, 
+where reality is not always as it seems, and people accept 
+the world they are given.
+
+I also believe that Plato had interjected some of his 
+anti-democractic politics into the story.
+
+For this to make sense, I will be comparing the allegory to The Lego Movie (2014),
+as I believe both represent the same underlying messages.
+
+\begin{numedquestion}
+    What do you think each of the following symbolize?
+    \begin{itemize}
+        \item Chains
+        \item Fire
+        \item Light 
+        \item Outside world
+        \item Pictures on the wall 
+      \end{itemize}
+\end{numedquestion}
+
+\begin{numedquestion}
+    What do you think the allegory is trying to teach us about perception vs. reality?
+    What is real, the cave or outside?
+\end{numedquestion}
+
+Perception is subjective, as our world is based on perceptions and biases,
+You cannot and will not be able to live through the eyes of another, 
+as to say their experiences shape them, but they can't shape it.
+
+What depends on reality, 
+
+\begin{numedquestion}
+    What does this tell us about how we acquire knowledge?
+\end{numedquestion}
+
+    
+\begin{numedquestion}
+    Imagine if you were a released prisoner. How do you think you would react? 
+    Would you want to be released from the cave? Why or why not? Explain.
+\end{numedquestion}
+
+
+\begin{numedquestion}
+    If we leave the cave, can we ever go back?
+\end{numedquestion}
+
+Physically, sure. Mentally, no.
+I think a lot of people are pretty comfortable in their ignorance.
+
+\begin{numedquestion}
+    Are we currently in "The Cave"? Can we ever know if we are in "The Cave" or not?
+\end{numedquestion}
+
+I appreciate how this question alludes to the concept of \textit{hyperreality},
+as I believe it is very much worth discussing when this question comes up, and 
+
+I find Plato is pretty clear about this.
+
+We are all born into such a cave, as our world is based on perceptions and biases,
+and the people around us impose the norms that shape our perception.
+
+\end{document}
+

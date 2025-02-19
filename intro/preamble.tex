@@ -14,7 +14,7 @@
 \usepackage{graphicx}
 \usepackage{float}
 \usepackage{booktabs}
-\usepackage[shortlabels]{enumitem}
+\usepackage{enumitem}
 % \usepackage{parskip}
 \usepackage{emptypage}
 \usepackage{subcaption}
@@ -27,7 +27,6 @@
 \usepackage{amsmath, amsfonts, mathtools, amsthm, amssymb}
 \usepackage{mathrsfs}
 \usepackage{cancel}
-\usepackage{blindtext}
 \usepackage{bm}
 \newcommand\N{\ensuremath{\mathbb{N}}}
 \newcommand\R{\ensuremath{\mathbb{R}}}
@@ -89,109 +88,93 @@
 }
 
 % theorems
+\makeatother
 \usepackage{thmtools}
 \usepackage[framemethod=TikZ]{mdframed}
-\mdfsetup{skipabove=1em,skipbelow=0em, innertopmargin=5pt, innerbottommargin=6pt}
+\mdfsetup{skipabove=1em,skipbelow=0em}
 
 
 \theoremstyle{definition}
 
-\makeatletter
+\declaretheoremstyle[
+    headfont=\bfseries\sffamily\color{ForestGreen!70!black}, bodyfont=\normalfont,
+    mdframed={
+        linewidth=2pt,
+        rightline=false, topline=false, bottomline=false,
+        linecolor=ForestGreen, backgroundcolor=ForestGreen!5,
+    }
+]{thmgreenbox}
 
+\declaretheoremstyle[
+    headfont=\bfseries\sffamily\color{NavyBlue!70!black}, bodyfont=\normalfont,
+    mdframed={
+        linewidth=2pt,
+        rightline=false, topline=false, bottomline=false,
+        linecolor=NavyBlue, backgroundcolor=NavyBlue!5,
+    }
+]{thmbluebox}
 
-\@ifclasswith{report}{nocolor}{
-    \declaretheoremstyle[headfont=\bfseries\sffamily, bodyfont=\normalfont, mdframed={ nobreak } ]{thmgreenbox}
-    \declaretheoremstyle[headfont=\bfseries\sffamily, bodyfont=\normalfont, mdframed={ nobreak } ]{thmredbox}
-    \declaretheoremstyle[headfont=\bfseries\sffamily, bodyfont=\normalfont]{thmbluebox}
-    \declaretheoremstyle[headfont=\bfseries\sffamily, bodyfont=\normalfont]{thmblueline}
-    \declaretheoremstyle[headfont=\bfseries\sffamily, bodyfont=\normalfont, numbered=no, mdframed={ rightline=false, topline=false, bottomline=false, }, qed=\qedsymbol ]{thmproofbox}
-    \declaretheoremstyle[headfont=\bfseries\sffamily, bodyfont=\normalfont, numbered=no, mdframed={ nobreak, rightline=false, topline=false, bottomline=false } ]{thmexplanationbox}
-    \AtEndEnvironment{eg}{\null\hfill$\diamond$}%
-}{
-    \declaretheoremstyle[
-        headfont=\bfseries\sffamily\color{ForestGreen!70!black}, bodyfont=\normalfont,
-        mdframed={
-            linewidth=2pt,
-            rightline=false, topline=false, bottomline=false,
-            linecolor=ForestGreen, backgroundcolor=ForestGreen!5,
-        }
-    ]{thmgreenbox}
+\declaretheoremstyle[
+    headfont=\bfseries\sffamily\color{NavyBlue!70!black}, bodyfont=\normalfont,
+    mdframed={
+        linewidth=2pt,
+        rightline=false, topline=false, bottomline=false,
+        linecolor=NavyBlue
+    }
+]{thmblueline}
 
-    \declaretheoremstyle[
-        headfont=\bfseries\sffamily\color{NavyBlue!70!black}, bodyfont=\normalfont,
-        mdframed={
-            linewidth=2pt,
-            rightline=false, topline=false, bottomline=false,
-            linecolor=NavyBlue, backgroundcolor=NavyBlue!5,
-        }
-    ]{thmbluebox}
+\declaretheoremstyle[
+    headfont=\bfseries\sffamily\color{RawSienna!70!black}, bodyfont=\normalfont,
+    mdframed={
+        linewidth=2pt,
+        rightline=false, topline=false, bottomline=false,
+        linecolor=RawSienna, backgroundcolor=RawSienna!5,
+    }
+]{thmredbox}
 
-    \declaretheoremstyle[
-        headfont=\bfseries\sffamily\color{NavyBlue!70!black}, bodyfont=\normalfont,
-        mdframed={
-            linewidth=2pt,
-            rightline=false, topline=false, bottomline=false,
-            linecolor=NavyBlue
-        }
-    ]{thmblueline}
+\declaretheoremstyle[
+    headfont=\bfseries\sffamily\color{RawSienna!70!black}, bodyfont=\normalfont,
+    numbered=no,
+    mdframed={
+        linewidth=2pt,
+        rightline=false, topline=false, bottomline=false,
+        linecolor=RawSienna, backgroundcolor=RawSienna!1,
+    },
+    qed=\qedsymbol
+]{thmproofbox}
 
-    \declaretheoremstyle[
-        headfont=\bfseries\sffamily\color{RawSienna!70!black}, bodyfont=\normalfont,
-        mdframed={
-            linewidth=2pt,
-            rightline=false, topline=false, bottomline=false,
-            linecolor=RawSienna, backgroundcolor=RawSienna!5,
-        }
-    ]{thmredbox}
-
-    \declaretheoremstyle[
-        headfont=\bfseries\sffamily\color{RawSienna!70!black}, bodyfont=\normalfont,
-        numbered=no,
-        mdframed={
-            linewidth=2pt,
-            rightline=false, topline=false, bottomline=false,
-            linecolor=RawSienna, backgroundcolor=RawSienna!1,
-        },
-        qed=\qedsymbol
-    ]{thmproofbox}
-
-    \declaretheoremstyle[
-        headfont=\bfseries\sffamily\color{NavyBlue!70!black}, bodyfont=\normalfont,
-        numbered=no,
-        mdframed={
-            linewidth=2pt,
-            rightline=false, topline=false, bottomline=false,
-            linecolor=NavyBlue, backgroundcolor=NavyBlue!1,
-        },
-    ]{thmexplanationbox}
-}
+\declaretheoremstyle[
+    headfont=\bfseries\sffamily\color{NavyBlue!70!black}, bodyfont=\normalfont,
+    numbered=no,
+    mdframed={
+        linewidth=2pt,
+        rightline=false, topline=false, bottomline=false,
+        linecolor=NavyBlue, backgroundcolor=NavyBlue!1,
+    },
+]{thmexplanationbox}
 
 
 
-
+% \declaretheoremstyle[headfont=\bfseries\sffamily, bodyfont=\normalfont, mdframed={ nobreak } ]{thmgreenbox}
+% \declaretheoremstyle[headfont=\bfseries\sffamily, bodyfont=\normalfont, mdframed={ nobreak } ]{thmredbox}
+% \declaretheoremstyle[headfont=\bfseries\sffamily, bodyfont=\normalfont]{thmbluebox}
+% \declaretheoremstyle[headfont=\bfseries\sffamily, bodyfont=\normalfont]{thmblueline}
+% \declaretheoremstyle[headfont=\bfseries\sffamily, bodyfont=\normalfont, numbered=no, mdframed={ rightline=false, topline=false, bottomline=false, }, qed=\qedsymbol ]{thmproofbox}
+% \declaretheoremstyle[headfont=\bfseries\sffamily, bodyfont=\normalfont, numbered=no, mdframed={ nobreak, rightline=false, topline=false, bottomline=false } ]{thmexplanationbox}
 
 \declaretheorem[style=thmgreenbox, name=Definition]{definition}
 \declaretheorem[style=thmbluebox, numbered=no, name=Example]{eg}
-\declaretheorem[style=thmbluebox, numbered=no, name=Exercise]{ex}
 \declaretheorem[style=thmredbox, name=Proposition]{prop}
 \declaretheorem[style=thmredbox, name=Theorem]{theorem}
 \declaretheorem[style=thmredbox, name=Lemma]{lemma}
 \declaretheorem[style=thmredbox, numbered=no, name=Corollary]{corollary}
 
-\@ifclasswith{report}{nocolor}{
-    \declaretheorem[style=thmproofbox, name=Proof]{replacementproof}
-    \declaretheorem[style=thmexplanationbox, name=Proof]{explanation}
-    \renewenvironment{proof}[1][\proofname]{\begin{replacementproof}}{\end{replacementproof}}
-}{
-    \declaretheorem[style=thmproofbox, name=Proof]{replacementproof}
-    \renewenvironment{proof}[1][\proofname]{\vspace{-10pt}\begin{replacementproof}}{\end{replacementproof}}
+\declaretheorem[style=thmproofbox, name=Proof]{replacementproof}
+\renewenvironment{proof}[1][\proofname]{\vspace{-10pt}\begin{replacementproof}}{\end{replacementproof}}
 
-    \declaretheorem[style=thmexplanationbox, name=Proof]{tmpexplanation}
-    \newenvironment{explanation}[1][]{\vspace{-10pt}\begin{tmpexplanation}}{\end{tmpexplanation}}
-}
 
-\makeatother
-
+\declaretheorem[style=thmexplanationbox, name=Proof]{tmpexplanation}
+\newenvironment{explanation}[1][]{\vspace{-10pt}\begin{tmpexplanation}}{\end{tmpexplanation}}
 
 \declaretheorem[style=thmblueline, numbered=no, name=Remark]{remark}
 \declaretheorem[style=thmblueline, numbered=no, name=Note]{note}
@@ -211,6 +194,7 @@
 % \AtEndEnvironment{opmerking}{\null\hfill$\diamond$}%
 
 % http://tex.stackexchange.com/questions/22119/how-can-i-change-the-spacing-before-theorems-with-amsthm
+\makeatletter
 % \def\thm@space@setup{%
 %   \thm@preskip=\parskip \thm@postskip=0pt
 % }
@@ -259,7 +243,7 @@
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 
-% \fancyhead[LE,RO]{Gregory Polstvin}
+% \fancyhead[LE,RO]{G. Polstvin}
 \fancyhead[RO,LE]{\@lesson}
 \fancyhead[RE,LO]{}
 \fancyfoot[LE,RO]{\thepage}
@@ -267,11 +251,8 @@
 
 \makeatother
 
-
-
-
 % notes
-% \usepackage{todonotes}
+\usepackage{todonotes}
 \usepackage{tcolorbox}
 
 \tcbuselibrary{breakable}
@@ -293,9 +274,6 @@
     breakable
 ]}{\end{tcolorbox}}
 
-
-
-
 % figure support
 \usepackage{import}
 \usepackage{xifthen}
@@ -309,18 +287,5 @@
 
 % %http://tex.stackexchange.com/questions/76273/multiple-pdfs-with-page-group-included-in-a-single-page-warning
 \pdfsuppresswarningpagegroup=1
-
-\newcommand{\nchapter}[2]{%
-    \setcounter{chapter}{#1}%
-    \addtocounter{chapter}{-1}%
-    \chapter{#2}
-}
-
-\newcommand{\nsection}[3]{%
-    \setcounter{chapter}{#1}%
-    \setcounter{section}{#2}%
-    \addtocounter{section}{-1}%
-    \section{#3}
-}%
 
 \author{G. Polstvin}
