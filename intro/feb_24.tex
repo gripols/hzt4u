@@ -1,0 +1,99 @@
+%\lesson{6}{24 February 2025}{Logical Fallacies}
+
+\section{Logical Fallacies with Representations in Set Theory}
+
+\begin{enumerate}
+    \item \textbf{Personal Attack (\textit{Argumentum ad Hominem})}  \\
+    Instead of addressing an argument, the opponent is attacked personally.
+    \begin{align*}
+        &\text{Let } A \text{ be a set of arguments.} \\
+        &\text{Let } p \in A \text{ be an argument presented by person } x. \\
+        &\text{Instead of refuting } p, \text{ a property } P(x) \text{ about } x \text{ is attacked.} \\
+        &\therefore \neg p \text{ is asserted without addressing the argument itself.}
+    \end{align*}
+
+    \item \textbf{Guilt by Association (\textit{Argumentum ad Odium})}  \\
+    An argument is dismissed because it is associated with an undesirable group.
+    \begin{align*}
+        &\text{Let } G \text{ be a set of individuals with property } P. \\
+        &x \in G \Rightarrow P(x) \\
+        &y \text{ is associated with } x \Rightarrow y \text{ is assumed to have } P(y) \\
+        &\text{(fallaciously, even if there is no evidence for } P(y)).
+    \end{align*}
+
+    \item \textbf{Straw Person (\textit{ad Stramineum hominem})}  \\
+    A misrepresented or weaker version of an argument is attacked instead of the actual argument.
+    \begin{align*}
+        &\text{Let } A \text{ be a set of valid arguments.} \\
+        &p \in A \text{ is transformed into a weaker } p' \notin A, \text{ where } p' \subset p. \\
+        &p' \text{ is refuted, implying incorrectly that } p \text{ is refuted.}
+    \end{align*}
+
+    \item \textbf{Post Hoc (\textit{Post Hoc, Ergo Propter Hoc})}  \\
+    Assuming that because one event follows another, the first event caused the second.
+    \begin{align*}
+        &E_1 \text{ occurs before } E_2. \\
+        &E_1 \rightarrow E_2 \text{ (fallaciously assumed causation from sequence).}
+    \end{align*}
+
+    \item \textbf{Begging the Question (\textit{Petitio Principii})}  \\
+    The conclusion is assumed within the premises.
+    \begin{align*}
+        &p \Rightarrow p \text{ (Premise implicitly assumes its own truth).}
+    \end{align*}
+
+    \item \textbf{Hasty Conclusion or Generalization (\textit{Secundum quid})}  \\
+    A conclusion is drawn from an insufficient sample.
+    \begin{align*}
+        &\text{Let } S \subset P \text{ be a small sample of a larger population } P. \\
+        &\forall x \in S, P(x) \text{ is observed.} \\
+        &\therefore \forall y \in P, P(y) \text{ is assumed (fallaciously).}
+    \end{align*}
+
+    \item \textbf{Inconsistency}  \\
+    Contradictory statements are made within the same argument.
+    \begin{align*}
+        &p \text{ is asserted and } \neg p \text{ is also asserted.} \\
+        &p \wedge \neg p \Rightarrow \bot \text{ (contradiction).}
+    \end{align*}
+
+    \item \textbf{False Dichotomy}  \\
+    Only two options are presented when more exist.
+    \begin{align*}
+        &\text{Let } S \text{ be a set of possible choices.} \\
+        &S = \{A, B, C, ...\} \text{ but only } \{A, B\} \text{ are presented.} \\
+        &\therefore \neg A \Rightarrow B \text{ (fallacious exclusion of other options).}
+    \end{align*}
+
+    \item \textbf{Glittering Generalities}  \\
+    A vague, emotionally appealing statement is used without substantive argument.
+    \begin{align*}
+        &\text{Let } P(x) \text{ be a positively connoted property.} \\
+        &\forall x \in A, P(x) \text{ is vaguely claimed but not defined.} \\
+        &\therefore P(A) \text{ is accepted without evidence.}
+    \end{align*}
+
+    \item \textbf{Appeal to Authority (Argumentum ad Verecundiam)}  \\
+    A claim is assumed true because an authority figure supports it.
+    \begin{align*}
+        &x \text{ is an authority on subject } S. \\
+        &x \text{ states } p. \\
+        &\therefore p \text{ is assumed true without evidence.}
+    \end{align*}
+
+    \item \textbf{Card-Stacking}  \\
+    Selective evidence is presented to favor one side.
+    \begin{align*}
+        &P = \{p_1, p_2, ..., p_n\} \text{ (full set of evidence).} \\
+        &P' = \{p_1, ..., p_k\} \subset P \text{ (subset chosen to support a claim).} \\
+        &\therefore P' \text{ is presented as if it represents all of } P.
+    \end{align*}
+
+    \item \textbf{Bandwagon (Argumentum ad Populum)}  \\
+    A claim is accepted because many people believe it.
+    \begin{align*}
+        &|X| \gg 1 \text{ (large number of people accept } p). \\
+        &\therefore p \text{ is assumed true (fallaciously).}
+    \end{align*}
+
+\end{enumerate}
